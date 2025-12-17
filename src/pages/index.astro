@@ -1,16 +1,85 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-2 md:pt-0">
+      <!-- Background gradient -->
+      <div class="absolute inset-0 bg-white/50"></div>
+        <!-- Spline 3D Animation -->
+        <spline-viewer
+          url="https://prod.spline.design/PBx-mrQP6suIxaZD/scene.splinecode"
+          class="absolute inset-0 w-full h-full opacity-60"
+        ></spline-viewer>
+
+        <!-- White overlay for text readability -->
+        <div class="absolute inset-0 bg-white/50 bg-white/70"></div>
+
+        <!-- Cover Spline watermark -->
+        <div class="absolute bottom-0 right-0 w-48 h-16 bg-white z-20"></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-fade-in-up">
+          <!-- Main Headline -->
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight tracking-tight text-shadow-lg px-2">
+            <span class="block">Stay Competitive</span>
+            <span class="block">
+              <span class="text-gray-900">with </span>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-700 to-green-800 relative inline-block">
+                Smart Automation
+                <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-green-600 to-green-800 rounded-full"></span>
+              </span>
+            </span>
+          </h1>
+          
+          <!-- Subtitle -->
+          <p class="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed font-medium text-shadow px-2">
+             Less manual work. Faster responses. Fewer mistakes.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-4">
+            <a href="#contact" class="group relative bg-green-600 hover:bg-green-700 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl flex items-center overflow-hidden backdrop-blur-sm w-full sm:w-auto justify-center">
+              <div class="absolute inset-0 bg-gradient-to-r from-green-700 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span class="relative z-10">Get Started Today</span>
+              <svg class="relative z-10 ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  			  <path d="M5 12h14"></path>
+  		      <path d="m13 5 7 7-7 7"></path>
+		    </svg>
+
+
+            <a href="/portfolio" class="group flex items-center text-gray-700 hover:text-green-600 font-semibold text-base sm:text-lg transition-all duration-300">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm shadow-xl rounded-full flex items-center justify-center mr-3 sm:mr-4 group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-600 ml-0.5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </div>
+              <span class="border-b-2 border-transparent group-hover:border-green-600 transition-all duration-300">
+                View Our Work
+              </span>
+			  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-600 ml-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  			  <path d="M8 5v14l11-7z"></path>
+            </svg>
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto px-4">
+            <div class="text-center">
+              <div class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 text-shadow">150+</div>
+              <div class="text-xs sm:text-sm text-gray-600 font-medium">Projects</div>
+            </div>
+            <div class="text-center border-x border-gray-200">
+              <div class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 text-shadow">80+</div>
+              <div class="text-xs sm:text-sm text-gray-600 font-medium">Clients</div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 text-shadow">5+</div>
+              <div class="text-xs sm:text-sm text-gray-600 font-medium">Years</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</Layout>
