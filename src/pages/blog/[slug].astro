@@ -46,7 +46,7 @@ The businesses that implement AI chatbots effectively in 2024 will have a signif
     readTime: 8,
     category: 'AI Automation',
     tags: ['AI Chatbots', 'Customer Service', 'Automation', 'Customer Experience', 'Support'],
-    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg',
+    image: '/images/pexels/pexels-photo-8386440.jpeg',
     featured: true
   },
   {
@@ -94,7 +94,7 @@ But the benefits go beyond time savings. Automation reduces errors, improves con
     readTime: 10,
     category: 'AI Automation',
     tags: ['Workflow Automation', 'Small Business', 'Productivity', 'Business Process', 'Efficiency'],
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
+    image: '/images/pexels/pexels-photo-3183150.jpeg',
     featured: true
   },
   {
@@ -175,7 +175,7 @@ SEO is a long-term investment. Expect 3-6 months before seeing significant resul
     readTime: 12,
     category: 'SEO',
     tags: ['SEO', 'Google Rankings', 'Keyword Research', 'Search Engine Optimization', 'Organic Traffic'],
-    image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg',
+    image: '/images/pexels/pexels-photo-270637.jpeg',
     featured: true
   },
   {
@@ -249,7 +249,7 @@ Use UTM parameters on all links to track exactly which posts drive results. This
     readTime: 9,
     category: 'Social Media',
     tags: ['Social Media Marketing', 'Marketing Automation', 'Content Strategy', 'Social Media Management'],
-    image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg',
+    image: '/images/pexels/pexels-photo-607812.jpeg',
     featured: false
   },
   {
@@ -309,7 +309,7 @@ Test everything. A/B test subject lines, send times, content formats, and CTAs. 
     readTime: 11,
     category: 'Email Marketing',
     tags: ['Email Marketing', 'Lead Nurturing', 'Marketing Automation', 'Email Campaigns', 'Conversion'],
-    image: 'https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg',
+    image: '/images/pexels/pexels-photo-4065891.jpeg',
     featured: false
   },
   {
@@ -380,7 +380,7 @@ The businesses winning with AI content are those using it to enhance human creat
     readTime: 10,
     category: 'AI Automation',
     tags: ['AI Content', 'Content Marketing', 'SEO Content', 'Content Creation', 'AI Writing'],
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg',
+    image: '/images/pexels/pexels-photo-3861969.jpeg',
     featured: false
   },
   {
@@ -469,7 +469,7 @@ Once you're tracking properly, optimize ruthlessly:
     readTime: 9,
     category: 'Digital Marketing',
     tags: ['Marketing ROI', 'Analytics', 'Performance Marketing', 'Marketing Metrics', 'Data-Driven Marketing'],
-    image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg',
+    image: '/images/pexels/pexels-photo-590016.jpeg',
     featured: false
   },
   {
@@ -558,7 +558,7 @@ Local SEO is an ongoing process. Monitor your rankings, respond to reviews promp
     readTime: 11,
     category: 'SEO',
     tags: ['Local SEO', 'Google Business Profile', 'Local Search', 'Google Maps', 'Local Marketing'],
-    image: 'https://images.pexels.com/photos/4052198/pexels-photo-4052198.jpeg',
+    image: '/images/pexels/pexels-photo-4052198.jpeg',
     featured: false
   },
   {
@@ -636,7 +636,7 @@ The goal is augmenting human salespeople, not replacing them. The best CRM autom
     readTime: 10,
     category: 'AI Automation',
     tags: ['CRM Automation', 'Sales Automation', 'Lead Management', 'Sales Process', 'Pipeline Management'],
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg',
+    image: '/images/pexels/pexels-photo-3184291.jpeg',
     featured: false
   },
   {
@@ -716,7 +716,7 @@ The businesses that commit to ongoing optimization consistently outperform those
     readTime: 12,
     category: 'Web Development',
     tags: ['Conversion Optimization', 'CRO', 'Landing Pages', 'A/B Testing', 'User Experience'],
-    image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg',
+    image: '/images/pexels/pexels-photo-3184339.jpeg',
     featured: false
   },
   {
@@ -825,7 +825,7 @@ Content marketing is a long-term investment. Expect 6-12 months before seeing si
     readTime: 11,
     category: 'Digital Marketing',
     tags: ['Content Marketing', 'Content Strategy', 'Lead Generation', 'Brand Authority', 'Thought Leadership'],
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
+    image: '/images/pexels/pexels-photo-3184465.jpeg',
     featured: false
   },
   {
@@ -931,7 +931,7 @@ The beauty of funnel automation is that once built, it works 24/7. While you sle
     readTime: 13,
     category: 'Digital Marketing',
     tags: ['Marketing Funnel', 'Marketing Automation', 'Lead Conversion', 'Sales Funnel', 'Customer Journey'],
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
+    image: '/images/pexels/pexels-photo-3184360.jpeg',
     featured: false
   }
 ];
@@ -971,7 +971,12 @@ const relatedPosts = blogPosts
   .slice(0, 3);
 ---
 
-<Layout>
+<Layout 
+  title={`${post.title} | Seeded Media Blog`}
+  description={post.excerpt}
+  image={post.image}
+  type="article"
+>
   <main class="pt-20 bg-gray-50 min-h-screen">
     <article class="py-12">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

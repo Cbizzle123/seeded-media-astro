@@ -1,5 +1,21 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const { 
+  title = "Seeded Media - Automation and Marketing Solutions",
+  description = "Seeded Media - AI automation, chatbots, workflow automation, and digital marketing solutions that grow your business. Based in Leeds, UK.",
+  image = "https://seededmedia.co.uk/images/seeded-logo.png",
+  type = "website"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://seededmedia.co.uk");
 ---
 
 <!DOCTYPE html>
@@ -8,16 +24,62 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="AI automation, chatbots, workflow automation, digital marketing, SEO, social media, email marketing, website development, Leeds" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="Seeded Media" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Seeded Media",
+        "url": "https://seededmedia.co.uk",
+        "logo": "https://seededmedia.co.uk/images/seeded-logo.png",
+        "description": "AI automation, chatbots, workflow automation, and digital marketing solutions.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Leeds",
+          "addressCountry": "UK"
+        },
+        "sameAs": [
+          "https://www.instagram.com/seeded_media/",
+          "https://www.linkedin.com/in/charlie-bennett-13b311210/",
+          "https://dribbble.com/charlie_bennett",
+          "https://www.behance.net/charliebennett18"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "charlie@seededmedia.co.uk",
+          "contactType": "customer service"
+        }
+      })}
+    </script>
+
     <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js"></script>
-    <meta name="description" content="Seeded Media - Automations, chatbots, workflow automation, content systems, and digital marketing solutions that grow your business." />
-    <meta name="keywords" content="AI automation, chatbots, workflow automation, digital marketing, SEO, social media, email marketing, website development" />
-
-
-    <title>Seeded Media - Automation and Marketing Solutions</title>
   </head>
   <body class="antialiased">
     <!-- THIS LINE IS THE KEY -->
@@ -25,7 +87,7 @@ import '../styles/global.css';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <div class="flex items-center space-x-3">
-        <img src="/images/seeded-logo.png" alt="Seeded Media Logo" class="w-10 h-10">
+        <img src="/images/seeded-logo.png" alt="Seeded Media Logo" width="40" height="40" loading="eager" decoding="async" class="w-10 h-10">
         <span class="text-xl font-bold text-gray-900">Seeded Media</span>
       </div>
 

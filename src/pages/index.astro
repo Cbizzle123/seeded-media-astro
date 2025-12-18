@@ -340,8 +340,12 @@ const services = [
           <div class="col-span-1 md:col-span-2">
             <div class="flex items-center space-x-3 mb-4">
               <img
-                src="images/seeded-logo.png"
+                src="/images/seeded-logo.png"
                 alt="Seeded Media Logo"
+                width="40"
+                height="40"
+                loading="lazy"
+                decoding="async"
                 class="w-10 h-10 rounded-full"
               />
               <span class="text-xl font-bold text-white">Seeded Media</span>
@@ -355,6 +359,7 @@ const services = [
                 href="https://www.instagram.com/seeded_media/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors group"
               >
                 <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -365,6 +370,7 @@ const services = [
                 href="https://dribbble.com/charlie_bennett"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Dribbble"
                 class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors group"
               >
                 <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -375,6 +381,7 @@ const services = [
                 href="https://www.behance.net/charliebennett18"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Behance"
                 class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors group"
               >
                 <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -385,6 +392,7 @@ const services = [
                 href="https://www.linkedin.com/in/charlie-bennett-13b311210/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors group"
               >
                 <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -398,12 +406,12 @@ const services = [
           <div>
             <h3 class="text-white font-semibold mb-4">Services</h3>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">AI Chatbots</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Workflow Automation</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Content Systems</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Social Media</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Email Marketing</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">SEO</a></li>
+              <li><a href="/#services" class="text-gray-400 hover:text-green-400 transition-colors">AI Chatbots</a></li>
+              <li><a href="/#services" class="text-gray-400 hover:text-green-400 transition-colors">Workflow Automation</a></li>
+              <li><a href="/#services" class="text-gray-400 hover:text-green-400 transition-colors">Content Systems</a></li>
+              <li><a href="/#services" class="text-gray-400 hover:text-green-400 transition-colors">Social Media</a></li>
+              <li><a href="/#services" class="text-gray-400 hover:text-green-400 transition-colors">Email Marketing</a></li>
+              <li><a href="/#services" class="text-gray-400 hover:text-green-400 transition-colors">SEO</a></li>
             </ul>
           </div>
 
@@ -416,8 +424,6 @@ const services = [
               <li><a href="/portfolio" class="text-gray-400 hover:text-green-400 transition-colors">Portfolio</a></li>
               <li><a href="/blog" class="text-gray-400 hover:text-green-400 transition-colors">Blog</a></li>
               <li><a href="#contact" class="text-gray-400 hover:text-green-400 transition-colors">Contact</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Terms of Service</a></li>
             </ul>
           </div>
         </div>
