@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seeded-media-astro.netlify.app/sitemap-index.xml
+Sitemap: https://seededmedia.co.uk/sitemap-index.xml
