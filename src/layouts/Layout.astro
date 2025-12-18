@@ -21,6 +21,43 @@ import '../styles/global.css';
   </head>
   <body class="antialiased">
     <!-- THIS LINE IS THE KEY -->
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center space-x-3">
+        <img src="/images/seeded-logo.png" alt="Seeded Media Logo" class="w-10 h-10">
+        <span class="text-xl font-bold text-gray-900">Seeded Media</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/" class="text-gray-700 hover:text-green-600 font-medium">Home</a>
+        <a href="/portfolio" class="text-gray-700 hover:text-green-600 font-medium">My Work</a>
+        <a href="/blog" class="text-gray-700 hover:text-green-600 font-medium">Blog</a>
+        <button id="contact-btn" class="text-gray-700 hover:text-green-600 font-medium">
+          Contact
+        </button>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button id="menu-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:text-green-600">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-16 left-0 right-0 bg-white shadow-lg border-t">
+      <nav class="px-4 py-4 space-y-3">
+        <a href="/" class="block text-gray-700 hover:text-green-600 font-medium">Home</a>
+        <a href="/portfolio" class="block text-gray-700 hover:text-green-600 font-medium">My Work</a>
+        <a href="/blog" class="block text-gray-700 hover:text-green-600 font-medium">Blog</a>
+        <button id="contact-btn-mobile" class="block text-left w-full text-gray-700 hover:text-green-600 font-medium">
+          Contact
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
     <slot />
     <script type="text/javascript">
   (function(d, t) {
@@ -38,5 +75,37 @@ import '../styles/global.css';
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Scroll background
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+      header.classList.remove('bg-transparent');
+    } else {
+      header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+      header.classList.add('bg-transparent');
+    }
+  });
+
+  // Voiceflow open
+  const openChat = () => {
+    if (window.voiceflow && window.voiceflow.chat) {
+      window.voiceflow.chat.open();
+    }
+  };
+
+  document.getElementById('contact-btn')?.addEventListener('click', openChat);
+  document.getElementById('contact-btn-mobile')?.addEventListener('click', openChat);
+</script>
+
   </body>
 </html>

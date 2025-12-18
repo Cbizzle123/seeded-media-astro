@@ -1,0 +1,322 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- Paste your portfolio page sections here -->
+  <main class="pt-20 bg-gray-50 min-h-screen">
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-24">
+          <a
+            href="/"
+            class="inline-flex items-center text-green-600 hover:text-green-700 font-medium mb-12 transition-colors"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Back to Home
+          </a>
+
+          <!-- About Me Section -->
+          <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-10">
+            <div class="flex items-start gap-6">
+              <!-- Profile Image -->
+              <div style="flex-shrink: 0; width: 165px; height: 165px; border-radius: 50%; overflow: hidden;">
+                <img
+                  src="/images/profile-pic.jpg"
+                  alt="Charlie Bennett"
+                  style="width: 165px; height: 165px; border-radius: 50%; object-fit: cover; display: block;"
+                />
+              </div>
+              <!-- Content -->
+              <div class="flex-1">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Charlie Bennett</h1>
+                <p class="text-lg text-green-600 font-semibold mb-3">Digital Media & Automation Specialist</p>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  Based in Leeds, United Kingdom, I specialise in creating innovative digital solutions
+                  that transform how businesses operate. With over 5 years of experience in digital media
+                  and automation, I help organisations streamline their processes and amplify their impact
+                  through intelligent technology.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-sm bg-green-100 text-green-700 px-4 py-1.5 rounded-full font-medium">5+ Years Experience</span>
+                  <span class="text-sm bg-green-100 text-green-700 px-4 py-1.5 rounded-full font-medium">Leeds, UK</span>
+                  <span class="text-sm bg-green-100 text-green-700 px-4 py-1.5 rounded-full font-medium">Digital Media</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Project: Fish & Chip Awards -->
+        <div class="mb-20">
+          <!-- Project Header -->
+          <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center gap-4 mb-4">
+              <span class="text-sm font-semibold text-green-600 bg-green-100 px-4 py-2 rounded-full">
+                Event Production & Marketing
+              </span>
+              <div class="flex items-center text-gray-500 text-sm">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                2023-2026
+              </div>
+            </div>
+
+            <!-- NFCA Logo -->
+            <div class="mb-4">
+              <img
+                src="/images/NFCA-Logo-Vector-High-res.pdf copy.png"
+                alt="National Fish & Chip Awards Logo"
+                class="w-auto mx-auto"
+                style="max-height: 80px; height: auto; max-width: 300px;"
+              />
+            </div>
+
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 px-4">
+              The National Fish & Chip Awards 2023-2026
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              Prestigious awards ceremony celebrating excellence in the fish and chip industry. Delivered comprehensive event production including staging, lighting, AV systems, and live presentation hosting. Created engaging social media campaigns and magazine features to promote the event and drive ticket sales.
+            </p>
+
+            <!-- News Outlets Strip -->
+            <div class="mb-6">
+              <p class="text-sm text-gray-500 mb-3 font-medium">Featured In</p>
+              <img
+                src="/images/news-outlets.png"
+                alt="As featured in major news outlets"
+                class="w-full mx-auto"
+                style="max-width: 800px; max-height: 100px; height: auto; width: auto;"
+              />
+            </div>
+
+            <div class="flex flex-wrap gap-3 justify-center mt-6">
+              {['Event Production', 'Live Hosting', 'Social Media', 'Magazine Design', 'Stage Design'].map((tag) => (
+                <span class="text-sm bg-gray-100 text-gray-700 px-4 py-2 rounded-lg flex items-center font-medium">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                  </svg>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Image Gallery -->
+          <div class="space-y-6">
+            <!-- Row 1: Large ceremony photo -->
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl group" style="height: 300px; max-height: 300px;">
+              <img
+                src="/images/526_PLL_FISH_N_CHIPS_AWARDS_CEREMONY_WINNERS_1258-min.jpg"
+                alt="Fish & Chip Awards Ceremony"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                style="max-height: 300px; width: 100%; height: 100%; object-fit: cover;"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+
+            <!-- Row 2: Host and Stage -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group" style="height: 280px; max-height: 280px;">
+                <img
+                  src="/images/_DSF5304-min.jpg"
+                  alt="Event Host Presentation"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  style="max-height: 280px; width: 100%; height: 100%; object-fit: cover;"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group" style="height: 280px; max-height: 280px;">
+                <img
+                  src="/images/_DSF6758-min.jpg"
+                  alt="Stage Production Setup"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  style="max-height: 280px; width: 100%; height: 100%; object-fit: cover;"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+
+            <!-- Row 3: Social Media & Magazine - First 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/2.jpg"
+                  alt="Social Media - Tickets on Sale"
+                  class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/50 px-3 py-1 rounded-lg backdrop-blur-sm">
+                  Social Media
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/3.jpg"
+                  alt="Magazine Feature - Officially Open"
+                  class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/50 px-3 py-1 rounded-lg backdrop-blur-sm">
+                  Magazine Feature
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Takeaway Entry & Certificate -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/Takeaway of the Year - entry.jpg"
+                  alt="Takeaway of the Year Entry"
+                  class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/50 px-3 py-1 rounded-lg backdrop-blur-sm">
+                  Takeaway Entry
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/Certificate.jpg"
+                  alt="Employee of the Year Certificate"
+                  class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/50 px-3 py-1 rounded-lg backdrop-blur-sm">
+                  Certificate
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Project: NFFF -->
+        <div class="mb-20">
+          <!-- Project Header -->
+          <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center gap-4 mb-4">
+              <span class="text-sm font-semibold text-green-600 bg-green-100 px-4 py-2 rounded-full">
+                Digital Marketing & Design
+              </span>
+              <div class="flex items-center text-gray-500 text-sm">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                2023-Present
+              </div>
+            </div>
+
+            <!-- NFFF Logo -->
+            <div class="mb-4">
+              <img
+                src="/images/nffflogo (1).svg"
+                alt="National Federation of Fish Friers Logo"
+                class="w-auto mx-auto"
+                style="max-height: 60px; height: auto; max-width: 200px;"
+              />
+            </div>
+
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              National Federation of Fish Friers
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              Comprehensive digital marketing campaign for the National Federation of Fish Friers, supporting the UK's fish and chip industry since 1913. Created engaging social media content, membership materials, and promotional graphics to promote industry standards, training, and community engagement.
+            </p>
+
+            <div class="flex flex-wrap gap-3 justify-center mt-6">
+              {['Social Media', 'Graphic Design', 'Content Creation', 'Brand Marketing'].map((tag) => (
+                <span class="text-sm bg-gray-100 text-gray-700 px-4 py-2 rounded-lg flex items-center font-medium">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                  </svg>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Image Gallery - Modern Grid Layout -->
+          <div class="space-y-4">
+            <!-- Row 1: Social Media Content - Full Width Feature -->
+            <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+              <img
+                src="/images/NFFF social media.png"
+                alt="Social Media Campaigns"
+                class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+              />
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-gray-900 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                Social Media Campaign
+              </div>
+            </div>
+
+            <!-- Row 2: Membership Materials - Two Column -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/1.jpg"
+                  alt="NFFF Membership Materials"
+                  class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                />
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-900 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                  Membership Materials
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/2copy.jpg"
+                  alt="Training & Quality Accreditation"
+                  class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                />
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-900 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                  Training Programs
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: Marketing Materials - Two Column -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/portfolio image copy.png"
+                  alt="NFFF Marketing Materials"
+                  class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                />
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-900 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                  Marketing Materials
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-xl group bg-gray-100">
+                <img
+                  src="/images/Half-page ad (5).jpg"
+                  alt="NFFF Advertisement"
+                  class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                />
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-900 font-semibold text-sm px-4 py-2 rounded-full shadow-lg">
+                  Print Advertisement
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-16">
+          <div class="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Ready to Start Your Project?
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Let's discuss how we can help you achieve similar results with AI automation and digital marketing.
+            </p>
+            <a 
+              href="/#contact"
+              class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-block"
+            >
+              Start Your Project →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
