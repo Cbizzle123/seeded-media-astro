@@ -10,7 +10,7 @@ interface Props {
 
 const { 
   title = "Seeded Media - Automation and Marketing Solutions",
-  description = "Seeded Media - AI automation, chatbots, workflow automation, and digital marketing solutions that grow your business. Based in Leeds, UK.",
+  description = "Seeded Media - workflow automation, chatbots, AI systems, and marketing solutions that actually work. Based in Leeds, UK.",
   image = "https://seededmedia.co.uk/images/seeded-logo.png",
   type = "website"
 } = Astro.props;
@@ -23,6 +23,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://seededme
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
