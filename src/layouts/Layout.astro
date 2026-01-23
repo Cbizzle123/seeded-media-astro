@@ -1,0 +1,266 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = "Seeded Media - Automation and Marketing Solutions",
+  description = "Seeded Media - workflow automation, chatbots, AI systems, and marketing solutions that actually work. Based in Leeds, UK.",
+  image = "https://seededmedia.co.uk/images/seeded-logo.png",
+  type = "website"
+} = Astro.props;
+
+// Canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://seededmedia.co.uk");
+
+// JSON-LD schema (output safely with set:html)
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Seeded Media",
+  "url": "https://seededmedia.co.uk",
+  "logo": "https://seededmedia.co.uk/images/seeded-logo.png",
+  "description": "outreach automation, chatbots, workflow automation, and digital marketing solutions.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Leeds",
+    "addressCountry": "GB"
+  },
+  "sameAs": [
+    "https://www.instagram.com/seeded_media/",
+    "https://www.linkedin.com/in/charlie-bennett-13b311210/",
+    "https://dribbble.com/charlie_bennett",
+    "https://www.behance.net/charliebennett18"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "charlie@seededmedia.co.uk",
+    "contactType": "customer service"
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="AI automation, chatbots, workflow automation, digital marketing, SEO, social media, email marketing, website development, Leeds"
+    />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="Seeded Media" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- JSON-LD Structured Data (VALID OUTPUT) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Spline Viewer -->
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js"
+    ></script>
+  </head>
+
+  <body class="antialiased">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="/" class="flex items-center space-x-3 group">
+            <div class="relative">
+              <div class="absolute inset-0 bg-green-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img
+                src="/images/seeded-logo.png"
+                alt="Seeded Media Logo"
+                width="44"
+                height="44"
+                loading="eager"
+                decoding="async"
+                class="relative w-11 h-11 rounded-full transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <span class="text-xl font-bold text-gray-900 tracking-tight">Seeded Media</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-1">
+            <a href="/" class="relative px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 group">
+              Home
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 group-hover:w-3/4 transition-all duration-300"></span>
+            </a>
+            <a href="/portfolio" class="relative px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 group">
+              My Work
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 group-hover:w-3/4 transition-all duration-300"></span>
+            </a>
+            <a href="/blog" class="relative px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 group">
+              Blog
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 group-hover:w-3/4 transition-all duration-300"></span>
+            </a>
+            <button
+              id="contact-btn"
+              class="ml-4 px-6 py-2.5 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300"
+              type="button"
+            >
+              Contact
+            </button>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button
+            id="menu-toggle"
+            class="md:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-600 transition-all duration-300"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden absolute top-20 left-4 right-4 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl border border-gray-100 overflow-hidden">
+          <nav class="p-4 space-y-1">
+            <a href="/" class="flex items-center px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium rounded-xl transition-all duration-300">
+              <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              Home
+            </a>
+            <a href="/portfolio" class="flex items-center px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium rounded-xl transition-all duration-300">
+              <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+              My Work
+            </a>
+            <a href="/blog" class="flex items-center px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium rounded-xl transition-all duration-300">
+              <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+              </svg>
+              Blog
+            </a>
+            <div class="pt-2 mt-2 border-t border-gray-100">
+              <button
+                id="contact-btn-mobile"
+                class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                type="button"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+                Contact Us
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <slot />
+
+    <!-- Voiceflow Widget -->
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '693febbe00184fa65dc51331' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+
+    <!-- Header interactions -->
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const header = document.getElementById('site-header');
+
+      const setAriaExpanded = (value) => {
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', value ? 'true' : 'false');
+      };
+
+      menuToggle?.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        setAriaExpanded(isOpen);
+      });
+
+      window.addEventListener('scroll', () => {
+        if (!header) return;
+
+        if (window.scrollY > 20) {
+          header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+          header.classList.remove('bg-transparent');
+        } else {
+          header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+          header.classList.add('bg-transparent');
+        }
+      });
+
+      const openChat = () => {
+        if (window.voiceflow && window.voiceflow.chat) {
+          window.voiceflow.chat.open();
+        }
+      };
+
+      document.getElementById('contact-btn')?.addEventListener('click', openChat);
+      document.getElementById('contact-btn-mobile')?.addEventListener('click', () => {
+        openChat();
+        mobileMenu?.classList.add('hidden');
+        setAriaExpanded(false);
+      });
+
+      // Close mobile menu when clicking any link
+      mobileMenu?.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          setAriaExpanded(false);
+        });
+      });
+    </script>
+  </body>
+</html>
